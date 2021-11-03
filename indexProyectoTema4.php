@@ -24,18 +24,52 @@
                 <table class="tabla">
                     <tr class="bordetitulo">
                         <td>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a class="tituloPDO">PDO</a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a class="tituloMySQLi">MySQLi</a>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
                             <figure>
                                 <a><figcaption class="titulofoto">1. Conexión a la base de datos con la cuenta usuario y tratamiento de errores.</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio00.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio01pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio00.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio01pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="codigoPHP/ejercicio01mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio01mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -51,12 +85,25 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio01.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio02pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio01.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio02pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="codigoPHP/ejercicio02mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio02mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -72,12 +119,25 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio02.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio03pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio02.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio03pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="codigoPHP/ejercicio03mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio03mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -93,12 +153,25 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio03.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio04pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio03.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio04pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="codigoPHP/ejercicio04mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio04mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -114,12 +187,25 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio04.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio05pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio04.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio05pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="codigoPHP/ejercicio05mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio05mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -138,12 +224,25 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio05.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio06pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio05.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio06pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="codigoPHP/ejercicio06mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio06mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -161,12 +260,25 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio06.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio07pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio06.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio07pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="codigoPHP/ejercicio07mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio07mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -188,12 +300,25 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio07.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio08pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio07.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio08pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="codigoPHP/ejercicio08mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio08mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -210,12 +335,25 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio08.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio09pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio08.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio09pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="codigoPHP/ejercicio09mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio09mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -231,12 +369,25 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio09.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio10pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio09.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio10pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="codigoPHP/ejercicio10mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraEjercicio10mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -247,7 +398,7 @@
             <a href="../proyectoDWES/indexProyectoDWES.php"><img src="../proyectoTema3/webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
             <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../proyectoTema3/webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
             <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
-            <p>Ultima actualización: 02/11/2021 17:00</p>
+            <p>Ultima actualización: 03/11/2021 17:25</p>
         </footer>
     </body>
 </html>
