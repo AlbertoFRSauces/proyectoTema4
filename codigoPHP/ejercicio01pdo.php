@@ -4,6 +4,20 @@
         <meta charset="UTF-8">
         <meta name="author" content="Alberto Fernandez Ramirez">
         <title>Ejercicio 01 PDO</title>
+        <style>
+            a{
+                color: green;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            th{
+                border: 1px solid black;
+            }
+            td{
+                border: 1px solid black;
+            }
+        </style>
     </head>
     <body>
         <main>
@@ -19,7 +33,7 @@
             require_once '../config/configDBPDO.php';
             
             try{
-                echo 'Conexion realizada.';
+                echo '<a>Conexion realizada.</a>';
                 echo '<br>';
                 //Hago la conexion con la base de datos
                 $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
@@ -27,6 +41,29 @@
                 // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
                 $DAW207DBDepartamentos -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
+                //Creo el array con los atributos del PDO
+                $aAtributosPDO=[
+                    "AUTOCOMMIT",
+                    "CASE",
+                    "CLIENT_VERSION",
+                    "CONNECTION_STATUS",
+                    "DRIVER_NAME",
+                    "ERRMODE",
+                    "ORACLE_NULLS",
+                    "PERSISTENT",
+                    "SERVER_INFO",
+                    "SERVER_VERSION"
+                ];
+                
+                //Muestro los atributos declarados en el array de atributos uno a uno con un foreach
+                echo "<table>";
+                foreach($aAtributosPDO as $atributo){ // bucle que recorre los distintos atributos de PDO del array de atributos
+                    echo "<tr>";
+                        echo "<td><span style='font-weight:bold;'>PDO::ATTR_$atributo: </span></td><td>" . $DAW207DBDepartamentos->getAttribute(constant("PDO::ATTR_$atributo")) . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                
                 //Utilizo el método getAttribute para obtener información de los atributos de la conexion
                 $autocommit = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_AUTOCOMMIT);
                 $case = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_CASE);
@@ -35,6 +72,7 @@
                 $nombreDriver = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_DRIVER_NAME);
                 $errorMode = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_ERRMODE);
                 $nulls = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_ORACLE_NULLS);
+                $persistent = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_PERSISTENT);
                 $info = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_SERVER_INFO);
                 $version = $DAW207DBDepartamentos->getAttribute(PDO::ATTR_SERVER_VERSION);
 
@@ -52,6 +90,8 @@
                 echo "<strong>Modo error: </strong>$errorMode";
                 echo "<br>";
                 echo "<strong>Nulls: </strong>$nulls";
+                echo "<br>";
+                echo "<strong>Persistent: </strong>$persistent";
                 echo "<br>";
                 echo "<strong>Info: </strong>$info";
                 echo "<br>";

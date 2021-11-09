@@ -54,6 +54,9 @@
             td{
                 border: 1px solid black;
             }
+            a{
+                color: green;
+            }
         </style>
     </head>
     <body>
@@ -66,18 +69,19 @@
              */
             //Incluyo las variables de la conexion
             require_once '../config/configDBPDO.php';
+            //Incluyo la libreria de validacion
             require_once '../core/210322ValidacionFormularios.php';
             
             //Variable obligatorio inicializada a 1
             define("OBLIGATORIO", 1);
             
             //Variables maximos y minimos
-            define("TAMANO_MAXIMO_COD",3);//Maximo del campo CodDepartamento
-            define("TAMANO_MINIMO_COD",3);//Minimo del campo CodDepartamento
-            define("TAMANO_MAXIMO_DESC",255);//Maximo del campo DescDepartamento
-            define("TAMANO_MINIMO_DESC",0);//Minimo del campo DescDepartamento
-            define("TAMANO_MAXIMO_VOLUMEN",3.402823466E+38);//Maximo del campo VolumenNegocio
-            define("TAMANO_MINIMO_VOLUMEN",0);//Minimo del campo VolumenNegocio
+            define("TAMANO_MAXIMO_CODDEPARTAMENTO",3);//Maximo del campo CodDepartamento
+            define("TAMANO_MINIMO_CODDEPARTAMENTO",3);//Minimo del campo CodDepartamento
+            define("TAMANO_MAXIMO_DESCDEPARTAMENTO",255);//Maximo del campo DescDepartamento
+            define("TAMANO_MINIMO_DESCDEPARTAMENTO",0);//Minimo del campo DescDepartamento
+            define("TAMANO_MAXIMO_VOLUMENNEGOCIO",3.402823466E+38);//Maximo del campo VolumenNegocio
+            define("TAMANO_MINIMO_VOLUMENNEGOCIO",0);//Minimo del campo VolumenNegocio
             
             //Variable de entrada correcta inicializada a true
             $entradaOK = true;
@@ -99,27 +103,24 @@
             //Comprobar si se ha pulsado el boton enviar en el formulario
             if (isset($_REQUEST['enviar'])) {
                 //Comprobar si el campo CodDepartamento esta bien rellenado
-                $aErrores['codDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['codDepartamento'], TAMANO_MAXIMO_COD, TAMANO_MINIMO_COD, OBLIGATORIO);
+                $aErrores['codDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['codDepartamento'], TAMANO_MAXIMO_CODDEPARTAMENTO, TAMANO_MINIMO_CODDEPARTAMENTO, OBLIGATORIO);
                 if($aErrores['codDepartamento'] == null){
                     //Realizo la conexion
                     try{
-                        echo 'Conexion realizada.';
+                        echo '<a>Conexion realizada.</a>';
                         //Hago la conexion con la base de datos
                         $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                         // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
                         $DAW207DBDepartamentos -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         
-                        $consulta = ('SELECT * FROM Departamento');//creo el select de la tabla departamento
+                        //Creo el SELECT de la tabla departamento con un WHERE y el codigo de departamento pasado en el formulario
+                        $consulta = "SELECT CodDepartamento FROM Departamento WHERE CodDepartamento='{$_REQUEST['codDepartamento']}'";
                         $resultadoConsulta = $DAW207DBDepartamentos->prepare($consulta);//preparo la consulta
                         
                         $resultadoConsulta->execute();//ejecuto la consulta
                         
-                        $registroConsulta = $resultadoConsulta->fetchObject();//Obtengo el primer registro de la consulta como objeto
-                        while($registroConsulta){ // recorro los registros que devuelve la consulta de la consulta 
-                            if($registroConsulta->CodDepartamento == strtoupper($_REQUEST['codDepartamento'])){ // si hay algun codigo de departamento que coincida con lo que ha introducido el usuario
-                                $aErrores['codDepartamento']= "El código de Departamento introducido ya existe."; // meto un mensaje de error en el array de errores del codigo del departamento
-                            }
-                            $registroConsulta = $resultadoConsulta->fetchObject();  // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta
+                        if($resultadoConsulta->rowCount() > 0){//Compruebo si el valor que devuelve la consulta es mayor que 0, si es mayor que 0 el codigo de departamento ya existe
+                            $aErrores['codDepartamento'] = "El codigo de departamento introducido ya existe.";//Muestro un mensaje de error en el array de errores del codigo del departamento
                         }
                     }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
                         $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
@@ -133,9 +134,9 @@
                     }
                 }
                 //Comprobar si el campo DescDepartamento esta bien rellenado
-                $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['descDepartamento'], TAMANO_MAXIMO_DESC, TAMANO_MINIMO_DESC, OBLIGATORIO);
+                $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['descDepartamento'], TAMANO_MAXIMO_DESCDEPARTAMENTO, TAMANO_MINIMO_DESCDEPARTAMENTO, OBLIGATORIO);
                 //Comprobar si el campo es un float
-                $aErrores['volumenNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['volumenNegocio'], TAMANO_MAXIMO_VOLUMEN, TAMANO_MINIMO_VOLUMEN, OBLIGATORIO);
+                $aErrores['volumenNegocio'] = validacionFormularios::comprobarFloat($_REQUEST['volumenNegocio'], TAMANO_MAXIMO_VOLUMENNEGOCIO, TAMANO_MINIMO_VOLUMENNEGOCIO, OBLIGATORIO);
                 
                 //Comprobar si algun campo del array de errores ha sido rellenado
                 foreach ($aErrores as $campo => $error) {//recorro el array errores
@@ -157,7 +158,7 @@
             echo "<h2>Contenido tabla Departamento</h2>";
                 //Realizo la conexion
                 try{
-                    echo 'Conexion realizada.';
+                    echo '<a>Conexion realizada.</a>';
                     //Hago la conexion con la base de datos
                     $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                     // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION

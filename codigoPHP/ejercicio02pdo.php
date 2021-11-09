@@ -14,6 +14,9 @@
             td{
                 border: 1px solid black;
             }
+            a{
+                color: green;
+            }
         </style>
     </head>
     <body>
@@ -28,9 +31,8 @@
             //Incluyo las variables de la conexion
             require_once '../config/configDBPDO.php';
             
-            
             try{
-                echo 'Conexion realizada.';
+                echo '<a>Conexion realizada.</a>';
                 //Hago la conexion con la base de datos
                 $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                 
@@ -41,12 +43,49 @@
                 $querysql = "SELECT * FROM Departamento";
                 $consulta = $DAW207DBDepartamentos->query($querysql);
 
-                //Almaceno el resultado de fetchAll en una variable usando fetchAll que devuelve un array que contiene todas las filas del conjunto de resultados
-                $oResultado = $consulta->fetchAll(PDO::FETCH_ASSOC);//FETCH_ASSOC devuelve un array indexado por los nombres de las columnas del conjunto de resultados.
-
                 ?>
-                <!--Creo la tabla para mostrar el contenido de Departamento-->
-                <table >
+                
+                <!--Creo la tabla para mostrar el contenido de Departamento con fetchObject-->
+                <h2>Muestro el contenido con fetchObject</h2>
+                <table>
+                    <tr>
+                        <th>CodDepartamento</th>
+                        <th>DescDepartamento</th>
+                        <th>FechaBaja</th>
+                        <th>VolumenNegocio</th>
+                    </tr>
+                    <?php
+                        $oDepartamento = $consulta->fetchObject(); // Obtengo el primer registro de la consulta como un objeto
+                        while($oDepartamento) { // Recorro los registros que devuelve la consulta 
+                            echo "<tr>";
+                                echo "<td>" . $oDepartamento->CodDepartamento . "</td>";// obtengo el valor de CodDepartamento
+                                echo "<td>" . $oDepartamento->DescDepartamento . "</td>"; // obtengo el valor de DescDepartamento
+                                echo "<td>" . $oDepartamento->FechaBaja . "</td>"; // obtengo el valor de FechaBaja
+                                echo "<td>" . $oDepartamento->VolumenNegocio . "</td>"; // obtengo el valor de VolumenNegocio
+                            echo "</tr>";
+                        $oDepartamento = $consulta->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
+                        }
+                    ?>
+                </table>
+            
+                <?php
+                //Hago la conexion con la base de datos
+                $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
+                
+                // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
+                $DAW207DBDepartamentos -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                //Creo la consulta de la tabla Departamentos y la ejecuto guardandola en una variable
+                $querysql = "SELECT * FROM Departamento";
+                $consulta = $DAW207DBDepartamentos->query($querysql);
+                
+                //Almaceno el resultado de fetchAll en una variable usando fetchAll que devuelve un array que contiene todas las filas del conjunto de resultados
+                $aResultado = $consulta->fetchAll(PDO::FETCH_ASSOC);//FETCH_ASSOC devuelve un array indexado por los nombres de las columnas del conjunto de resultados.
+                ?>
+                
+                <!--Creo la tabla para mostrar el contenido de Departamento con fetchAll-->
+                <h2>Muestro el contenido con fetchAll</h2>
+                <table>
                     <tr>
                        <th>CodDepartamento</th>
                        <th>DescDepartamento</th>
@@ -55,7 +94,7 @@
                     </tr>
                     <?php
                     //Recorro con un foreach la variable oResultado para mostrar su contenido
-                      foreach($oResultado as $mostrar)
+                      foreach($aResultado as $mostrar)
                       {
                         echo "<tr>";
                             echo "<td>".$mostrar["CodDepartamento"]."</td>";
@@ -66,11 +105,11 @@
                       }
                     ?>
                 </table>
-
+                
                 <?php
-
-                $numRegistros = $consulta->rowCount();
-                echo "<p>Hay ". $numRegistros." registros.</p>";
+                echo '<h2>Muestro el total de registros con rowCount</h2>';
+                $numRegistros = $consulta->rowCount();//rowCount() me devuelve el total de registros que se encuentran en la consulta que le he pasado
+                echo "<p>Hay ". $numRegistros." registros.</p>";//Muestro los registros de la tabla Departamento
             
             }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
                 $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
