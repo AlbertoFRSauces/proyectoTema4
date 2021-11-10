@@ -39,6 +39,8 @@
                 // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
                 $DAW207DBDepartamentos -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 
+                
+                
                 //Consulta para realizar la insercion en la tabla Departamento
                 $consulta = <<<CONSULTA
                             INSERT INTO Departamento(CodDepartamento,DescDepartamento,VolumenNegocio) VALUES
@@ -61,14 +63,17 @@
                     ":DescDepartamento3" => "Prueba c",
                     ":VolumenNegocio3" => 35.3,
                 ];
-            
+                
+                $DAW207DBDepartamentos ->beginTransaction();//Desabilito el commit
                 $resultadoConsulta->execute($aParametros);//Ejecuto la consulta con el array de parametros
+                $DAW207DBDepartamentos->commit();//Hago el commit
                 
                 echo "<p>Se han realizado los INSERT con exito en la tabla Departamento</p>";
                 
                 $consultaMostrar = "SELECT * FROM Departamento";//Almaceno la consulta
                 $resultadoConsulta2=$DAW207DBDepartamentos->prepare($consultaMostrar);//Preparo la consulta
                 $resultadoConsulta2->execute(); //Ejecuto la consulta
+                
                 //MUESTRO LA TABLA DEPARTAMENTO
                 ?>
                 <table>
@@ -95,6 +100,7 @@
             <?php
                 
             }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
+                $DAW207DBDepartamentos->rollBack();
                 $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
                 $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
                 

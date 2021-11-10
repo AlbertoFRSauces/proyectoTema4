@@ -50,12 +50,27 @@
                 
                 //Inserto en el array parametros los datos a insertar en la consulta
                 $aDepartamentosNuevos = [
-                    ":CodDepartamento" => "RGT",
-                    ":DescDepartamento" => "Registro 1",
-                    ":VolumenNegocio" => 1876.5
+                    ["CodDepartamento" => "RGT",
+                    "DescDepartamento" => "Registro Tera",
+                    "VolumenNegocio" => 1000.9],
+                    ["CodDepartamento" => "RGS",
+                    "DescDepartamento" => "Registro Stargate",
+                    "VolumenNegocio" => 42.9],
+                    ["CodDepartamento" => "RGV",
+                    "DescDepartamento" => "Registro Aerial",
+                    "VolumenNegocio" => 10.9]
                 ];
             
-                $resultadoConsulta->execute($aDepartamentosNuevos);//Ejecuto la consulta con el array de parametros
+                $DAW207DBDepartamentos ->beginTransaction();//Desabilito el commit
+                
+                foreach ($aDepartamentosNuevos as $departamento) {//Recorro los registros que voy a insertar
+                    $parametrosConsulta =  [":CodDepartamento" => $departamento['CodDepartamento'],
+                                            ":DescDepartamento" => $departamento['DescDepartamento'],
+                                            ":VolumenNegocio" => $departamento['VolumenNegocio']];
+                    $resultadoConsulta->execute($parametrosConsulta);//Ejecuto la consulta con los parametros
+                }
+                
+                $DAW207DBDepartamentos->commit();//Hago el commit
                 
                 echo "<p>Se han realizado los INSERT con exito en la tabla Departamento</p>";
                 
@@ -87,6 +102,7 @@
                 </table>
             <?php
             }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
+                $DAW207DBDepartamentos->rollBack();
                 $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
                 $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
                 

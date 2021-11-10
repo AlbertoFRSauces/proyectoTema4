@@ -126,7 +126,7 @@
                            
                     //INSERCION DE DATOS EN DEPARTAMENTOS
                     //Creacion de la consulta que inserta los datos en Departamento
-                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento='{$_REQUEST['descDepartamento']}'";
+                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento LIKE '%{$_REQUEST['descDepartamento']}%';";
                             
                     $resultadoConsulta=$DAW207DBDepartamentos->prepare($consulta); // Preparo la consulta antes de ejecutarla
                     
@@ -163,34 +163,34 @@
                         echo "<p>No se ha encontrado ningun departamento con esa descripcion.</p>";
                         
                         if(empty($aRespuestas['descDepartamento'])){
-                        //MUESTRA DE LA TABLA DEPARTAMENTOS SI NO SE HA INTRODUCIDO NADA
-                        $sqlmostrar="SELECT * FROM Departamento";
-                        $resultadoConsulta2=$DAW207DBDepartamentos->prepare($sqlmostrar); // preparo la consulta
-                        $resultadoConsulta2->execute(); // ejecuto la consulta    
+                            //MUESTRA DE LA TABLA DEPARTAMENTOS SI NO SE HA INTRODUCIDO NADA
+                            $sqlmostrar="SELECT * FROM Departamento";
+                            $resultadoConsulta2=$DAW207DBDepartamentos->prepare($sqlmostrar); // preparo la consulta
+                            $resultadoConsulta2->execute(); // ejecuto la consulta    
 
-                        ?>
-                        <table>
-                            <tr>
-                                <th>CodDepartamento</th>
-                                <th>DescDepartamento</th>
-                                <th>FechaBaja</th>
-                                <th>VolumenNegocio</th>
-                            </tr>
-                            <?php 
-                                $oDepartamento = $resultadoConsulta2->fetchObject(); // Obtengo el primer registro de la consulta como un objeto
-                                while($oDepartamento) { // recorro los registros que devuelve la consulta de la consulta ?>
-                            <tr>
-                                <td><?php echo $oDepartamento->CodDepartamento; // obtengo el valor del codigo del departamento del registro actual ?></td>
-                                <td><?php echo $oDepartamento->DescDepartamento; // obtengo el valor de la descripcion del departamento del registro actual ?></td>
-                                <td><?php echo $oDepartamento->FechaBaja; // obtengo el valor de la fecha de baja del departamento del registro actual ?></td>
-                                <td><?php echo $oDepartamento->VolumenNegocio; // obtengo el valor de la fecha de baja del departamento del registro actual ?></td>
-                            </tr>
-                            <?php 
-                                $oDepartamento = $resultadoConsulta2->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
-                            }
                             ?>
-                        </table>
-                        <?php
+                            <table>
+                                <tr>
+                                    <th>CodDepartamento</th>
+                                    <th>DescDepartamento</th>
+                                    <th>FechaBaja</th>
+                                    <th>VolumenNegocio</th>
+                                </tr>
+                                <?php 
+                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // Obtengo el primer registro de la consulta como un objeto
+                                    while($oDepartamento) { // recorro los registros que devuelve la consulta de la consulta ?>
+                                <tr>
+                                    <td><?php echo $oDepartamento->CodDepartamento; // obtengo el valor del codigo del departamento del registro actual ?></td>
+                                    <td><?php echo $oDepartamento->DescDepartamento; // obtengo el valor de la descripcion del departamento del registro actual ?></td>
+                                    <td><?php echo $oDepartamento->FechaBaja; // obtengo el valor de la fecha de baja del departamento del registro actual ?></td>
+                                    <td><?php echo $oDepartamento->VolumenNegocio; // obtengo el valor de la fecha de baja del departamento del registro actual ?></td>
+                                </tr>
+                                <?php 
+                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
+                                }
+                                ?>
+                            </table>
+                            <?php
                         }
                     }
                 }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error

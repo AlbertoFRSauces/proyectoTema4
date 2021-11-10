@@ -57,7 +57,7 @@
                 
                 //Muestro los atributos declarados en el array de atributos uno a uno con un foreach
                 echo "<table>";
-                foreach($aAtributosPDO as $atributo){ // bucle que recorre los distintos atributos de PDO del array de atributos
+                foreach($aAtributosPDO as $atributo){ //Bucle que recorre los distintos atributos de PDO del array de atributos
                     echo "<tr>";
                         echo "<td><span style='font-weight:bold;'>PDO::ATTR_$atributo: </span></td><td>" . $DAW207DBDepartamentos->getAttribute(constant("PDO::ATTR_$atributo")) . "</td>";
                     echo "</tr>";

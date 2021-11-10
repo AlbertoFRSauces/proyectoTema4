@@ -104,6 +104,7 @@
             if (isset($_REQUEST['enviar'])) {
                 //Comprobar si el campo CodDepartamento esta bien rellenado
                 $aErrores['codDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['codDepartamento'], TAMANO_MAXIMO_CODDEPARTAMENTO, TAMANO_MINIMO_CODDEPARTAMENTO, OBLIGATORIO);
+                //Realizo un if para solo comprobar si existe el codigo, si ha sido nulo ya no es necesario entrar a comprobar si se encuentra
                 if($aErrores['codDepartamento'] == null){
                     //Realizo la conexion
                     try{
@@ -140,16 +141,16 @@
                 
                 //Comprobar si algun campo del array de errores ha sido rellenado
                 foreach ($aErrores as $campo => $error) {//recorro el array errores
-                    if ($error != null) {//compruebo si hay algun error
-                        $_REQUEST[$campo] = '';//limpio el campo
-                        $entradaOK = false;//le doy el valor false a entradaOK
+                    if ($error != null) {//Compruebo si hay algun error
+                        $_REQUEST[$campo] = '';//Limpio el campo
+                        $entradaOK = false;//Le doy el valor false a entradaOK
                     }
                 }
-            } else {//si el usuario no le ha dado a enviar
-                $entradaOK = false;//le doy el valor false a entradaOK
+            } else {//Si el usuario no le ha dado a enviar
+                $entradaOK = false;//Le doy el valor false a entradaOK
             }
             
-            if($entradaOK){ // si la entrada es true recojo los valores del array aRespuestas
+            if($entradaOK){ //Si la entrada es true recojo los valores del array aRespuestas
                 $aRespuestas['codDepartamento'] = strtoupper($_REQUEST['codDepartamento']); // strtoupper() transforma los caracteres de un string a mayuscula
                 $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento']; 
                 $aRespuestas['volumenNegocio'] = $_REQUEST['volumenNegocio'];
@@ -161,7 +162,7 @@
                     echo '<a>Conexion realizada.</a>';
                     //Hago la conexion con la base de datos
                     $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
-                    // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
+                    //Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
                     $DAW207DBDepartamentos -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                            
                     //INSERCION DE DATOS EN DEPARTAMENTOS
@@ -170,18 +171,18 @@
                             INSERT INTO Departamento(CodDepartamento,DescDepartamento,VolumenNegocio) VALUES 
                             (:CodDepartamento, :DescDepartamento,:VolumenNegocio);
                             CONSULTA;
-                    $ejecutarConsulta=$DAW207DBDepartamentos->prepare($consultaInsertar); // Preparo la consulta antes de ejecutarla
+                    $ejecutarConsulta=$DAW207DBDepartamentos->prepare($consultaInsertar); //Preparo la consulta antes de ejecutarla
                     //Creo un array con los parametros que hay que insertar obtenidos del array de respuestas
                     $parametros = [ ":CodDepartamento" => $aRespuestas['codDepartamento'],
                                     ":DescDepartamento" => $aRespuestas['descDepartamento'],
                                     ":VolumenNegocio" => $aRespuestas['volumenNegocio'] ];
                     
-                    $ejecutarConsulta->execute($parametros); // Ejecuto la consulta pasando los parametros del array de parametros
+                    $ejecutarConsulta->execute($parametros); //Ejecuto la consulta pasando los parametros del array de parametros
                     
                     //MUESTRA DE LA TABLA DEPARTAMENTOS
                     $sqlmostrar="SELECT * FROM Departamento";
-                    $resultadoConsulta2=$DAW207DBDepartamentos->prepare($sqlmostrar); // preparo la consulta
-                    $resultadoConsulta2->execute(); // ejecuto la consulta    
+                    $resultadoConsulta2=$DAW207DBDepartamentos->prepare($sqlmostrar); //Preparo la consulta
+                    $resultadoConsulta2->execute(); //Ejecuto la consulta    
                     
                     ?>
                     <table>
