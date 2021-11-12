@@ -3,7 +3,7 @@
  * Created: 3 nov. 2021
  * Script carga inicial de base de datos
  */
-USE DAW207DBDepartamentos;
+USE DAW207DWESProyectoTema4;
 -- Insertar datos en la tabla Departamento de la base de datos DAW207DBDepartamentos
 INSERT INTO Departamento (CodDepartamento, DescDepartamento, FechaBaja, VolumenNegocio) VALUES
 ('INF','Departamento de Informatica',null,1.5),
