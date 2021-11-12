@@ -4,7 +4,7 @@
  * Script borrado de base de datos y usuario
  */
 -- Eliminar base de datos
-DROP DATABASE IF EXISTS DAW207DBDepartamentos;
+DROP DATABASE IF EXISTS DAW207DWESProyectoTema4;
 -- Eliminar usuario de la base de datos
-DROP USER IF EXISTS usuarioDAW207DBDepartamentos;
+DROP USER IF EXISTS User207DWESProyectoTema4;
 

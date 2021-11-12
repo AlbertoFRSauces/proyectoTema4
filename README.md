@@ -19,3 +19,8 @@ Ejercicios del Tema 4 de PHP, código de realización de los ejercicios y muestr
 ## Back end
 - PHP 7.4
 - MySQL 8.0.26
+
+## Entornos
+**Desarrollo:**
+http://daw207.sauces.local/proyectoTema4/indexProyectoTema4.php
+**Explotacion:**
