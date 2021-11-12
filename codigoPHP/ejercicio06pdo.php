@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Alberto Fernandez Ramirez">
+        <link href="../webroot/css/estiloejercicio.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="../webroot/css/img/home.png" type="image/x-icon">
         <title>Ejercicio 06 PDO</title>
         <style>
-            p{
+            .exitoInsercion{
                 color: green;
             }
             table{
@@ -20,7 +22,6 @@
         </style>
     </head>
     <body>
-        <main>
             <?php
             /*
              * @author: Alberto Fernandez Ramirez
@@ -70,9 +71,9 @@
                     $resultadoConsulta->execute($parametrosConsulta);//Ejecuto la consulta con los parametros
                 }
                 
-                $DAW207DBDepartamentos->commit();//Hago el commit
+                $DAW207DBDepartamentos->commit();//Si todo ha funcionado hago commit
                 
-                echo "<p>Se han realizado los INSERT con exito en la tabla Departamento</p>";
+                echo '<a class="exitoInsercion">Se han realizado los INSERT con exito en la tabla Departamento</a>';
                 
                 $consultaMostrar = "SELECT * FROM Departamento";//Almaceno la consulta
                 $resultadoConsulta2=$DAW207DBDepartamentos->prepare($consultaMostrar);//Preparo la consulta
@@ -102,7 +103,7 @@
                 </table>
             <?php
             }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
-                $DAW207DBDepartamentos->rollBack();
+                $DAW207DBDepartamentos->rollBack();//Si hay errores hago rollback
                 $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
                 $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
                 
@@ -113,7 +114,12 @@
                 unset($DAW207DBDepartamentos);
             }
             ?>
-        </main>
+        <footer class="piepagina">
+            <a href="../indexProyectoTema4.php"><img src="../webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
+            <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
+            <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
+            <p>Ultima actualización: 12/11/2021 10:26</p>
+        </footer>
     </body>
 </html>
 

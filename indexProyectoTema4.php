@@ -46,6 +46,40 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
+                                <a><figcaption class="titulofoto">Archivos de configuracion, configDBPDO y configDBMySQLI.</figcaption></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a><img src="webroot/css/img/play.png" class="muestraconfig" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraConfigDBpdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion">|</a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a><img src="webroot/css/img/play.png" class="muestraconfig" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraConfigDBmysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
+                            <figure>
                                 <a><figcaption class="titulofoto">1. Conexión a la base de datos con la cuenta usuario y tratamiento de errores.</figcaption></a>
                             </figure>
                         </td>
@@ -398,7 +432,7 @@
             <a href="../proyectoDWES/indexProyectoDWES.php"><img src="../proyectoTema3/webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
             <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../proyectoTema3/webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
             <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
-            <p>Ultima actualización: 03/11/2021 17:25</p>
+            <p>Ultima actualización: 09/11/2021 22:25</p>
         </footer>
     </body>
 </html>

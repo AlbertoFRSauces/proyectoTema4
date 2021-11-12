@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Alberto Fernandez Ramirez">
+        <link href="../webroot/css/estiloejercicio.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="../webroot/css/img/home.png" type="image/x-icon">
         <title>Ejercicio 05 PDO</title>
         <style>
             p{
@@ -20,7 +22,6 @@
         </style>
     </head>
     <body>
-        <main>
             <?php
             /*
              * @author: Alberto Fernandez Ramirez
@@ -111,6 +112,11 @@
                 unset($DAW207DBDepartamentos);
             }
             ?>
-        </main>
+        <footer class="piepagina">
+            <a href="../indexProyectoTema4.php"><img src="../webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
+            <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
+            <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
+            <p>Ultima actualización: 12/11/2021 10:26</p>
+        </footer>
     </body>
 </html>

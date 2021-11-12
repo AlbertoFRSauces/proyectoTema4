@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Alberto Fernandez Ramirez">
+        <link href="../webroot/css/estiloejercicio.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="../webroot/css/img/home.png" type="image/x-icon">
         <title>Ejercicio 02 PDO</title>
         <style>
             table{
@@ -14,13 +16,12 @@
             td{
                 border: 1px solid black;
             }
-            a{
+            .conexionRealizada{
                 color: green;
             }
         </style>
     </head>
     <body>
-        <main>
             <?php
             /*
              * @author: Alberto Fernandez Ramirez
@@ -32,7 +33,7 @@
             require_once '../config/configDBPDO.php';
             
             try{
-                echo '<a>Conexion realizada.</a>';
+                echo '<a class="conexionRealizada">Conexion realizada.</a>';
                 //Hago la conexion con la base de datos
                 $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                 
@@ -111,7 +112,7 @@
                 <?php
                 echo '<h2>Muestro el total de registros con rowCount</h2>';
                 $numRegistros = $resultadoConsulta2->rowCount();//rowCount() me devuelve el total de registros que se encuentran en la consulta que le he pasado
-                echo "<p>Hay ". $numRegistros." registros.</p>";//Muestro los registros de la tabla Departamento
+                echo "<p>La tabla Departamento contiene ". $numRegistros." registros.</p>";//Muestro los registros de la tabla Departamento
             
             }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
                 $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
@@ -124,7 +125,12 @@
                 unset($DAW207DBDepartamentos);
             }
             ?>
-        </main>
+        <footer class="piepagina">
+            <a href="../indexProyectoTema4.php"><img src="../webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
+            <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
+            <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
+            <p>Ultima actualización: 12/11/2021 10:26</p>
+        </footer>
     </body>
 </html>
 

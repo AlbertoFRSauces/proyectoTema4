@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Alberto Fernandez Ramirez">
+        <link href="../webroot/css/estiloejercicio.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="../webroot/css/img/home.png" type="image/x-icon">
         <title>Ejercicio 03 PDO</title>
         <style>
             form{
@@ -54,7 +56,7 @@
             td{
                 border: 1px solid black;
             }
-            a{
+            .conexionRealizada{
                 color: green;
             }
         </style>
@@ -108,7 +110,7 @@
                 if($aErrores['codDepartamento'] == null){
                     //Realizo la conexion
                     try{
-                        echo '<a>Conexion realizada.</a>';
+                        echo '<a class="conexionRealizada">Conexion realizada.</a>';
                         //Hago la conexion con la base de datos
                         $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                         // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
@@ -159,7 +161,7 @@
             echo "<h2>Contenido tabla Departamento</h2>";
                 //Realizo la conexion
                 try{
-                    echo '<a>Conexion realizada.</a>';
+                    echo '<a class="conexionRealizada">Conexion realizada.</a>';
                     //Hago la conexion con la base de datos
                     $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                     //Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
@@ -258,6 +260,12 @@
             <?php
             }
             ?>
+        <footer class="piepagina">
+            <a href="../indexProyectoTema4.php"><img src="../webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
+            <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
+            <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
+            <p>Ultima actualización: 12/11/2021 10:26</p>
+        </footer>
     </body>
 </html>
 

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<departamentos>
+  <departamento>
+    <codDepartamento>AIR</codDepartamento>
+    <descDepartamento>Departamento Aire</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>0.57</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>AVA</codDepartamento>
+    <descDepartamento>Departamento Agua</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>57.98</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>COM</codDepartamento>
+    <descDepartamento>Compras</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>200.3</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>IOT</codDepartamento>
+    <descDepartamento>Departamento Iota</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>87.5</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>KAP</codDepartamento>
+    <descDepartamento>Departamento Kappa</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>85.5</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>LAM</codDepartamento>
+    <descDepartamento>Departamento Lambda</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>7.32</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>MAR</codDepartamento>
+    <descDepartamento>Marketing</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>330.33</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>TIE</codDepartamento>
+    <descDepartamento>Departamento Tierra</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>57</volumenNegocio>
+  </departamento>
+  <departamento>
+    <codDepartamento>VEN</codDepartamento>
+    <descDepartamento>Ventas</descDepartamento>
+    <fechaBaja/>
+    <volumenNegocio>250.51</volumenNegocio>
+  </departamento>
+</departamentos>
