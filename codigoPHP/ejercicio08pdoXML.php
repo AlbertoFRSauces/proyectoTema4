@@ -5,7 +5,7 @@
         <meta name="author" content="Alberto Fernandez Ramirez">
         <link href="../webroot/css/estiloejercicio.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="../webroot/css/img/home.png" type="image/x-icon">
-        <title>Ejercicio 08 PDO</title>
+        <title>Ejercicio 08 PDO XML</title>
         <style>
             .exportadoCorrectamente{
                 color: green;

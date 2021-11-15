@@ -131,10 +131,7 @@
                             
                     $resultadoConsulta=$DAW207DBDepartamentos->prepare($consulta); // Preparo la consulta antes de ejecutarla
                     
-                    $parametros = [":DescDepartamento" => $aRespuestas['descDepartamento']];
-                    
-                    $resultadoConsulta->execute($parametros); // Ejecuto la consulta pasando los parametros del array de parametros
-                    
+                    $resultadoConsulta->execute(); // Ejecuto la consulta pasando los parametros del array de parametro
                        
                     if($resultadoConsulta->rowCount() > 0){ //Si la consulta devuelve algun registro
                         ?>

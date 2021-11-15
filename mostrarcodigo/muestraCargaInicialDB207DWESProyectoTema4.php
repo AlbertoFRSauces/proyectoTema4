@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">     
         <meta name="author" content="Alberto Fernandez Ramirez">
-        <title>Ejercicio 08 PDO</title>
+        <title>Archivo de carga inicial de DB</title>
     </head>
     <body>
     <?php
-        highlight_file("../codigoPHP/ejercicio08pdo.php");
+        highlight_file("../scriptDB/CargaInicialDB207DWESProyectoTema4.sql");
     ?>
     </body>
 </html>
