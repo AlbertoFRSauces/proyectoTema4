@@ -40,25 +40,21 @@
                 
                 $DAW207DBDepartamentos -> beginTransaction();//Desabilito el commit
                 
-                $archivoXML = new DOMDocument("1.0", "utf-8");//Creo el nuevo documento, y le asigno dos valores, la version y la codificacion XML
-                $archivoXML -> formatOutput = true;//Le asigno la salida con formato
+                $archivoJSON = file_get_contents('../tmp/jsonImportado.json');//Cargo el archivo con file_get_contents
+                $aDepartamentos = json_decode($archivoJSON);//Decodifico el string en JSON a un array de arrays
                 
-                $archivoXML->load('../tmp/xmlImportado.xml');//Cargo el archivo XML con load
                 
-                $departamento = $archivoXML->getElementsByTagName('departamento');//Creo el nodo departamento
-                
-                foreach ($departamento as $valorDepartamento) {
-                    $CodDepartamento = $valorDepartamento->getElementsByTagName('codDepartamento')->item(0)->nodeValue;
-                    $DescDepartamento = $valorDepartamento->getElementsByTagName('descDepartamento')->item(0)->nodeValue;
-                    $FechaBaja = ($valorDepartamento->getElementsByTagName('fechaBaja')->item(0)->nodeValue)==''?null:$FechaBaja;
-                    $VolumenNegocio = $valorDepartamento->getElementsByTagName('volumenNegocio')->item(0)->nodeValue;
+                /*
+                 * Por cada departamento, bind de los parámetros y ejecución
+                 * del sql.
+                 */
+                foreach ($aDepartamentos as $valorDepartamento) {//Recorro el array de departamentos
+                    $resultadoConsulta->bindParam(':CodDepartamento', $valorDepartamento->CodDepartamento);//Vinculo el parametro CodDepartamento al nombre de variable valorDepartamento->CodDepartamento con bindParam
+                    $resultadoConsulta->bindParam(':DescDepartamento', $valorDepartamento->DescDepartamento);//Vinculo el parametro DescDepartamento al nombre de variable valorDepartamento->DescDepartamento con bindParam
+                    $resultadoConsulta->bindParam(':FechaBaja', $valorDepartamento->FechaBaja);//Vinculo el parametro FechaBaja al nombre de variable valorDepartamento->FechaBaja con bindParam
+                    $resultadoConsulta->bindParam(':VolumenNegocio', $valorDepartamento->VolumenNegocio);//Vinculo el parametro VolumenNegocio al nombre de variable valorDepartamento->VolumenNegocio con bindParam
                     
-                    $resultadoConsulta->bindParam(':CodDepartamento', $CodDepartamento);
-                    $resultadoConsulta->bindParam(':DescDepartamento', $DescDepartamento);
-                    $resultadoConsulta->bindParam(':FechaBaja', $FechaBaja);
-                    $resultadoConsulta->bindParam(':VolumenNegocio', $VolumenNegocio);
-                    
-                    $resultadoConsulta->execute();//Ejecuto el select
+                    $resultadoConsulta->execute();//Ejecuto la consulta
                 }
                 
                 $DAW207DBDepartamentos->commit();//Si todo ha funcionado hago commit
@@ -81,7 +77,7 @@
             <a href="../indexProyectoTema4.php"><img src="../webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
             <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
             <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
-            <p>Ultima actualización: 12/11/2021 10:26</p>
+            <p>Ultima actualización: 16/11/2021 20:26</p>
         </footer>
     </body>
 </html>

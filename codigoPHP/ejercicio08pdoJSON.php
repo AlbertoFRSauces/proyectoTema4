@@ -56,9 +56,11 @@
                 }
                 
                 $json = json_encode($aDepartamento, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);//Codifico el array, JSON_PRETTY_PRINT: Utiliza espacios en blanco para formatear los datos devueltos y JSON_UNESCAPED_UNICODE: Codifica caracteres Unicode multibyte literalmente
-                $puntero = fopen("../tmp/jsonExportado.json", "w+"); //Abro el fichero en el que voy a escribir, uso w+ para la apertura para lectura y escritura; coloca el puntero al fichero al principio del fichero y trunca el fichero a longitud cero. Si el fichero no existe se intenta crear.
-                fwrite($puntero, $json); //Escribo el archivo en modo binario seguro, se le pasa el puntero que es el recurso y el string a escribir
-                                
+                //$puntero = fopen("../tmp/jsonExportado.json", "w+"); //Abro el fichero en el que voy a escribir, uso w+ para la apertura para lectura y escritura; coloca el puntero al fichero al principio del fichero y trunca el fichero a longitud cero. Si el fichero no existe se intenta crear.
+                //fwrite($puntero, $json); //Escribo el archivo en modo binario seguro, se le pasa el puntero que es el recurso y el string a escribir
+                
+                file_put_contents("../tmp/jsonExportado.json", $json); //Uso file_put_contents en vez de fopen y fwrite ya que me dan problemas, el resultado es el mismo, se le pasa el nombre del fichero y el array codificado
+                
                 echo '<a class="exportadoCorrectamente">Se ha exportado la base de datos en un archivo JSON correctamente.</a>';
                 
             }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
@@ -76,7 +78,7 @@
             <a href="../indexProyectoTema4.php"><img src="../webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
             <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
             <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
-            <p>Ultima actualización: 12/11/2021 10:26</p>
+            <p>Ultima actualización: 15/11/2021 22:26</p>
         </footer>
     </body>
 </html>

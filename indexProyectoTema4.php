@@ -438,13 +438,13 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">9. Aplicación resumen MtoDeDepartamentosTema4. (Incluir PHPDoc y versionado en el repositorio
+                                <a><figcaption class="titulofoto">9. Aplicación resumen MtoDepartamentosTema4. (Incluir PHPDoc y versionado en el repositorio
                                         GIT)</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio09pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="../207DWESMtoDepartamentosTema4/indexProyectoMtoDepartamentosTema4.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
@@ -460,7 +460,7 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">10. Aplicación resumen MtoDeDepartamentos POO y multicapa.</figcaption></a>
+                                <a><figcaption class="titulofoto">10. Aplicación resumen MtoDepartamentos POO y multicapa.</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">

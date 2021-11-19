@@ -127,13 +127,13 @@
                            
                     //INSERCION DE DATOS EN DEPARTAMENTOS
                     //Creacion de la consulta que inserta los datos en Departamento
-                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento LIKE '%{$_REQUEST['descDepartamento']}%';";
+                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento LIKE '%{$aRespuestas['descDepartamento']}%';";
                             
                     $resultadoConsulta=$DAW207DBDepartamentos->prepare($consulta); // Preparo la consulta antes de ejecutarla
                     
                     $resultadoConsulta->execute(); // Ejecuto la consulta pasando los parametros del array de parametro
                        
-                    if($resultadoConsulta->rowCount() > 0){ //Si la consulta devuelve algun registro
+                    if($resultadoConsulta->rowCount() > 0){ //Si la consulta devuelve algun registro o nulo
                         ?>
                         <table>
                             <tr>
@@ -157,40 +157,12 @@
                             ?>
                         </table>
                         <?php
-                    }else{
-                        echo "<p>No se ha encontrado ningun departamento con esa descripcion.</p>";
-                        
-                        if(empty($aRespuestas['descDepartamento'])){
-                            //MUESTRA DE LA TABLA DEPARTAMENTOS SI NO SE HA INTRODUCIDO NADA
-                            $sqlmostrar="SELECT * FROM Departamento";
-                            $resultadoConsulta2=$DAW207DBDepartamentos->prepare($sqlmostrar); // preparo la consulta
-                            $resultadoConsulta2->execute(); // ejecuto la consulta    
-
-                            ?>
-                            <table>
-                                <tr>
-                                    <th>CodDepartamento</th>
-                                    <th>DescDepartamento</th>
-                                    <th>FechaBaja</th>
-                                    <th>VolumenNegocio</th>
-                                </tr>
-                                <?php 
-                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // Obtengo el primer registro de la consulta como un objeto
-                                    while($oDepartamento) { // recorro los registros que devuelve la consulta de la consulta ?>
-                                <tr>
-                                    <td><?php echo $oDepartamento->CodDepartamento; // obtengo el valor del codigo del departamento del registro actual ?></td>
-                                    <td><?php echo $oDepartamento->DescDepartamento; // obtengo el valor de la descripcion del departamento del registro actual ?></td>
-                                    <td><?php echo $oDepartamento->FechaBaja; // obtengo el valor de la fecha de baja del departamento del registro actual ?></td>
-                                    <td><?php echo $oDepartamento->VolumenNegocio; // obtengo el valor de la fecha de baja del departamento del registro actual ?></td>
-                                </tr>
-                                <?php 
-                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
-                                }
-                                ?>
-                            </table>
-                            <?php
-                        }
+                        echo '<h2>Muestro el total de registros con rowCount</h2>';
+                        $numRegistros = $resultadoConsulta->rowCount();//rowCount() me devuelve el total de registros que se encuentran en la consulta que le he pasado
+                        echo "<p>La tabla Departamento contiene ". $numRegistros." registros.</p>";//Muestro los registros de la tabla Departamento
                     }
+                    ?>
+                <?php
                 }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
                     $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
                     $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
