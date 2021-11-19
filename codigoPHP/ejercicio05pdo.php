@@ -33,24 +33,20 @@
             //Incluyo las variables de la conexion
             require_once '../config/configDBPDO.php';
             
+            //Consulta para realizar la insercion en la tabla Departamento
+            $consulta = <<<CONSULTA
+                        INSERT INTO Departamento(CodDepartamento,DescDepartamento,VolumenNegocio) VALUES
+                            (:CodDepartamento1,:DescDepartamento1,:VolumenNegocio1),
+                            (:CodDepartamento2,:DescDepartamento2,:VolumenNegocio2),
+                            (:CodDepartamento3,:DescDepartamento3,:VolumenNegocio3);
+                        CONSULTA;
+            
             try{
                 //Hago la conexion con la base de datos
                 $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
             
                 // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
                 $DAW207DBDepartamentos -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
-                
-                
-                //Consulta para realizar la insercion en la tabla Departamento
-                $consulta = <<<CONSULTA
-                            INSERT INTO Departamento(CodDepartamento,DescDepartamento,VolumenNegocio) VALUES
-                                (:CodDepartamento1,:DescDepartamento1,:VolumenNegocio1),
-                                (:CodDepartamento2,:DescDepartamento2,:VolumenNegocio2),
-                                (:CodDepartamento3,:DescDepartamento3,:VolumenNegocio3);
-                            CONSULTA;
-                
-                $resultadoConsulta=$DAW207DBDepartamentos->prepare($consulta); // Preparo la consulta antes de ejecutarla
                 
                 //Inserto en el array parametros los datos a insertar en la consulta
                 $aParametros = [
@@ -65,7 +61,8 @@
                     ":VolumenNegocio3" => 35.3,
                 ];
                 
-                $DAW207DBDepartamentos ->beginTransaction();//Desabilito el commit
+                $DAW207DBDepartamentos ->beginTransaction();//Desabilito el autocommit
+                $resultadoConsulta=$DAW207DBDepartamentos->prepare($consulta); // Preparo la consulta antes de ejecutarla
                 $resultadoConsulta->execute($aParametros);//Ejecuto la consulta con el array de parametros
                 $DAW207DBDepartamentos->commit();//Hago el commit
                 

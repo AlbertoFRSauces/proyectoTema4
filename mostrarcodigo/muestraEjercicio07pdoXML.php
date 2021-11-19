@@ -7,7 +7,7 @@
     </head>
     <body>
     <?php
-        highlight_file("../codigoPHP/ejercicio07pdo.php");
+        highlight_file("../codigoPHP/ejercicio07pdoXML.php");
     ?>
     </body>
 </html>

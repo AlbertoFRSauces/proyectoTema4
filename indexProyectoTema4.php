@@ -24,6 +24,54 @@
                 <table class="tabla">
                     <tr class="bordetitulo">
                         <td>
+                            <figure>
+                                <a><figcaption class="titulofoto">Archivo Crear DB.</figcaption></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraCreaDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
+                            <figure>
+                                <a><figcaption class="titulofoto">Archivo Carga Inicial DB.</figcaption></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraCargaInicialDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
+                            <figure>
+                                <a><figcaption class="titulofoto">Archivo Borrar DB.</figcaption></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="mostrarcodigo/muestraBorraDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
                         </td>
                         <td class="cajaimagen">
                             <figure>
@@ -286,6 +334,33 @@
                 <table class="tabla">
                     <tr class="bordetitulo">
                         <td>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a class="tituloPDO">XML</a>
+                            </figure>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion"></a>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion"></a>
+                        </td>
+                        <td class="cajaseparacion">
+                            <a class="tituloseparacion"></a>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a class="tituloMySQLi">JSON</a>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
                             <figure>
                                 <a><figcaption class="titulofoto">7. Página web que toma datos (código y descripción) de un fichero xml y los añade a la tabla
                                         Departamento de nuestra base de datos. (IMPORTAR). El fichero importado se encuentra en el
@@ -294,12 +369,12 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio07pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio07pdoXML.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio07pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio07pdoXML.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                         <td class="cajaseparacion">
@@ -307,12 +382,12 @@
                         </td>
                         <td>
                             <figure>
-                                <a href="codigoPHP/ejercicio07mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio07pdoJSON.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td>
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio07mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio07pdoJSON.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -334,12 +409,12 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio08pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio08pdoXML.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio08pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio08pdoXML.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                         <td class="cajaseparacion">
@@ -347,12 +422,12 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio08mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="codigoPHP/ejercicio08pdoJSON.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraEjercicio08mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraEjercicio08pdoJSON.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -363,13 +438,13 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">9. Aplicación resumen MtoDeDepartamentosTema4. (Incluir PHPDoc y versionado en el repositorio
+                                <a><figcaption class="titulofoto">9. Aplicación resumen MtoDepartamentosTema4. (Incluir PHPDoc y versionado en el repositorio
                                         GIT)</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="codigoPHP/ejercicio09pdo.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="../207DWESMtoDepartamentosTema4/indexProyectoMtoDepartamentosTema4.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
@@ -377,19 +452,6 @@
                                 <a href="mostrarcodigo/muestraEjercicio09pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
-                        <td class="cajaseparacion">
-                            <a class="tituloseparacion">|</a>
-                        </td>
-                        <td class="cajaimagen">
-                            <figure>
-                                <a href="codigoPHP/ejercicio09mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
-                            </figure>
-                        </td>
-                        <td class="cajaimagen">
-                            <figure>
-                                <a href="mostrarcodigo/muestraEjercicio09mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
-                            </figure>
-                        </td>
                     </tr>
                 </table>
             </section>
@@ -398,7 +460,7 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">10. Aplicación resumen MtoDeDepartamentos POO y multicapa.</figcaption></a>
+                                <a><figcaption class="titulofoto">10. Aplicación resumen MtoDepartamentos POO y multicapa.</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
@@ -411,19 +473,6 @@
                                 <a href="mostrarcodigo/muestraEjercicio10pdo.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
-                        <td class="cajaseparacion">
-                            <a class="tituloseparacion">|</a>
-                        </td>
-                        <td class="cajaimagen">
-                            <figure>
-                                <a href="codigoPHP/ejercicio10mysqli.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
-                            </figure>
-                        </td>
-                        <td class="cajaimagen">
-                            <figure>
-                                <a href="mostrarcodigo/muestraEjercicio10mysqli.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
-                            </figure>
-                        </td>
                     </tr>
                 </table>
             </section>
@@ -432,7 +481,7 @@
             <a href="../proyectoDWES/indexProyectoDWES.php"><img src="../proyectoTema3/webroot/css/img/atras.png" class="imageatras" alt="IconoAtras" /></a>
             <a href="https://github.com/AlbertoFRSauces/proyectoTema4" target="_blank"><img src="../proyectoTema3/webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
             <p><a>&copy;</a>Alberto Fernández Ramírez 29/09/2021 Todos los derechos reservados.</p>
-            <p>Ultima actualización: 09/11/2021 22:25</p>
+            <p>Ultima actualización: 15/11/2021 19:53</p>
         </footer>
     </body>
 </html>

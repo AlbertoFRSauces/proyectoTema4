@@ -5,7 +5,7 @@
         <meta name="author" content="Alberto Fernandez Ramirez">
         <link href="../webroot/css/estiloejercicio.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="../webroot/css/img/home.png" type="image/x-icon">
-        <title>Ejercicio 07 PDO</title>
+        <title>Ejercicio 07 PDO XML</title>
         <style>
             .exitoInsercion{
                 color: green;
@@ -48,15 +48,15 @@
                 $departamento = $archivoXML->getElementsByTagName('departamento');//Creo el nodo departamento
                 
                 foreach ($departamento as $valorDepartamento) {
-                    $CodDepartamento = $valorDepartamento->getElementsByTagName('codDepartamento')->item(0)->nodeValue;
-                    $DescDepartamento = $valorDepartamento->getElementsByTagName('descDepartamento')->item(0)->nodeValue;
-                    $FechaBaja = ($valorDepartamento->getElementsByTagName('fechaBaja')->item(0)->nodeValue)==''?null:$FechaBaja;
-                    $VolumenNegocio = $valorDepartamento->getElementsByTagName('volumenNegocio')->item(0)->nodeValue;
+                    $CodDepartamento = $valorDepartamento->getElementsByTagName('codDepartamento')->item(0)->nodeValue;//Busco el elemento con el nombre de etiqueta local dado, una vez tengo el elemento lo almaceno en una variable
+                    $DescDepartamento = $valorDepartamento->getElementsByTagName('descDepartamento')->item(0)->nodeValue;//Busco el elemento con el nombre de etiqueta local dado, una vez tengo el elemento lo almaceno en una variable
+                    $FechaBaja = ($valorDepartamento->getElementsByTagName('fechaBaja')->item(0)->nodeValue)==''?null:$FechaBaja;//Busco el elemento con el nombre de etiqueta local dado, una vez tengo el elemento lo almaceno en una variable
+                    $VolumenNegocio = $valorDepartamento->getElementsByTagName('volumenNegocio')->item(0)->nodeValue;//Busco el elemento con el nombre de etiqueta local dado, una vez tengo el elemento lo almaceno en una variable
                     
-                    $resultadoConsulta->bindParam(':CodDepartamento', $CodDepartamento);
-                    $resultadoConsulta->bindParam(':DescDepartamento', $DescDepartamento);
-                    $resultadoConsulta->bindParam(':FechaBaja', $FechaBaja);
-                    $resultadoConsulta->bindParam(':VolumenNegocio', $VolumenNegocio);
+                    $resultadoConsulta->bindParam(':CodDepartamento', $CodDepartamento);//Vinculo el parametro CodDepartamento al nombre de variable $CodDepartamento con bindParam
+                    $resultadoConsulta->bindParam(':DescDepartamento', $DescDepartamento);//Vinculo el parametro DescDepartamento al nombre de variable $DescDepartamento con bindParam
+                    $resultadoConsulta->bindParam(':FechaBaja', $FechaBaja);//Vinculo el parametro FechaBaja al nombre de variable $FechaBaja con bindParam
+                    $resultadoConsulta->bindParam(':VolumenNegocio', $VolumenNegocio);//Vinculo el parametro VolumenNegocio al nombre de variable $VolumenNegocio con bindParam
                     
                     $resultadoConsulta->execute();//Ejecuto el select
                 }

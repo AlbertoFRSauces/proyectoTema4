@@ -153,7 +153,7 @@
             }
             
             if($entradaOK){ //Si la entrada es true recojo los valores del array aRespuestas
-                $aRespuestas['codDepartamento'] = strtoupper($_REQUEST['codDepartamento']); // strtoupper() transforma los caracteres de un string a mayuscula
+                $aRespuestas['codDepartamento'] = $_REQUEST['codDepartamento']; // strtoupper() transforma los caracteres de un string a mayuscula
                 $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento']; 
                 $aRespuestas['volumenNegocio'] = $_REQUEST['volumenNegocio'];
                     
@@ -161,7 +161,6 @@
             echo "<h2>Contenido tabla Departamento</h2>";
                 //Realizo la conexion
                 try{
-                    echo '<a class="conexionRealizada">Conexion realizada.</a>';
                     //Hago la conexion con la base de datos
                     $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
                     //Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
@@ -209,6 +208,10 @@
                         ?>
                     </table>    
                     <?php
+                    echo '<h2>Muestro el total de registros con rowCount</h2>';
+                    $numRegistros = $resultadoConsulta2->rowCount();//rowCount() me devuelve el total de registros que se encuentran en la consulta que le he pasado
+                    echo "<p>La tabla Departamento contiene ". $numRegistros." registros.</p>";//Muestro los registros de la tabla Departamento
+                    
                 }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
                     $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
                     $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
