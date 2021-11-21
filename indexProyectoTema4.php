@@ -30,6 +30,11 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
+                                <a href="scriptDB/CreaDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
                                 <a href="mostrarcodigo/muestraCreaDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
@@ -46,6 +51,11 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
+                                <a href="scriptDB/CargaInicialDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
                                 <a href="mostrarcodigo/muestraCargaInicialDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
@@ -58,6 +68,11 @@
                         <td>
                             <figure>
                                 <a><figcaption class="titulofoto">Archivo Borrar DB.</figcaption></a>
+                            </figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure>
+                                <a href="scriptDB/BorraDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
