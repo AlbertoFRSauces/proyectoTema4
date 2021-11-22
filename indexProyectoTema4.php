@@ -25,7 +25,7 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">Archivo Crear DB.</figcaption></a>
+                                <a><figcaption class="titulofoto">Archivo Crear DB Explotación.</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
@@ -35,7 +35,7 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraCreaDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraCreaDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -46,7 +46,7 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">Archivo Carga Inicial DB.</figcaption></a>
+                                <a><figcaption class="titulofoto">Archivo Carga Inicial DB Explotación.</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
@@ -56,7 +56,7 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraCargaInicialDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraCargaInicialDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
@@ -67,12 +67,12 @@
                     <tr class="bordetitulo">
                         <td>
                             <figure>
-                                <a><figcaption class="titulofoto">Archivo Borrar DB.</figcaption></a>
+                                <a><figcaption class="titulofoto">Archivo Borrar DB Explotación.</figcaption></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="scriptDB/BorraDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="scriptDB/BorraDB207DWESProyectoTema4.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
@@ -83,6 +83,44 @@
                     </tr>
                 </table>
             </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
+                            <figure><a><figcaption class="titulofoto">Archivo Crear DB Desarrollo.</figcaption></a></figure>
+                        </td>
+                        
+                        <td class="cajaimagen">
+                            <figure><a href="mostrarcodigo/muestraCreaDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a></figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
+                            <figure><a><figcaption class="titulofoto">Archivo Carga Inicial DB Desarrollo.</figcaption></a></figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure><a href="mostrarcodigo/muestraCargaInicialDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a></figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="primerasfilas">
+                <table class="tabla">
+                    <tr class="bordetitulo">
+                        <td>
+                            <figure><a><figcaption class="titulofoto">Archivo Borrar DB Desarrollo.</figcaption></a></figure>
+                        </td>
+                        <td class="cajaimagen">
+                            <figure><a href="mostrarcodigo/muestraBorraDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a></figure>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            
             <section class="primerasfilas">
                 <table class="tabla">
                     <tr class="bordetitulo">
