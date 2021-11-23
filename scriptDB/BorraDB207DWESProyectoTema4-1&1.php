@@ -16,9 +16,7 @@ try {
 
     //Consulta para realizar la insercion de los datos a partir del archivo xml
     $consulta = <<<CONSULTA
-                DROP DATABASE IF EXISTS dbs4868800;
-                -- Eliminar usuario de la base de datos
-                DROP USER IF EXISTS dbu1194752;
+                DROP TABLE IF EXISTS dbs4868800.Departamento;
                 CONSULTA;
 
     $DAW207DBDepartamentos->exec($consulta); //Ejecuto la consulta

@@ -72,12 +72,12 @@
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="scriptDB/BorraDB207DWESProyectoTema4.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
+                                <a href="scriptDB/BorraDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/play.png" class="imageplay" alt="Botonplay"/></a>
                             </figure>
                         </td>
                         <td class="cajaimagen">
                             <figure>
-                                <a href="mostrarcodigo/muestraBorraDB207DWESProyectoTema4.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
+                                <a href="mostrarcodigo/muestraBorraDB207DWESProyectoTema4-1&1.php"><img src="webroot/css/img/codigo.png" class="imagecodigo" alt="Botoncodigo"/></a>
                             </figure>
                         </td>
                     </tr>
