@@ -7,7 +7,7 @@
     </head>
     <body>
     <?php
-        highlight_file("../scriptDB/BorraDB207DWESProyectoTema4.sql");
+        highlight_file("../scriptDB/BorraDB207DWESProyectoTema4-Desarollo.sql");
     ?>
     </body>
 </html>
